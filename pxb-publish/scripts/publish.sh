@@ -15,9 +15,9 @@ do
     esac
 done
 
-NPM_LATEST_VERSION=`npm show ${package} version`
-NPM_BETA_VERSION=`npm show ${package}@beta version`
-NPM_ALPHA_VERSION=`npm show ${package}@alpha version`
+NPM_LATEST_VERSION=`npm show ${PACKAGE} version`
+NPM_BETA_VERSION=`npm show ${PACKAGE}@beta version`
+NPM_ALPHA_VERSION=`npm show ${PACKAGE}@alpha version`
 
 # Check if this is an alpha, beta, or latest package and run the appropriate publishing command
 if grep -q "alpha" <<< "$CURRENT_VERSION";
