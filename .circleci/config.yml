@@ -37,7 +37,7 @@ jobs:
           name: Publish @pxblue/publish
           command: |
             cd pxb-publish
-            bash scripts/pxb-publish.sh -b $CIRCLE_BRANCH
+            bash scripts/publish.sh -b $CIRCLE_BRANCH
 
 workflows:
   version: 2
