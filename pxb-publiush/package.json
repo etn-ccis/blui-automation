@@ -1,0 +1,14 @@
+{
+  "name": "@pxblue/publish",
+  "version": "1.0.0-alpha.0",
+  "description": "A script that can be used to automatically publish packages to npm.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "bin":{
+    "pxb-publish": "scripts/publish.sh"
+  },
+  "author": "Power Xpert Blue <pxblue@eaton.com> (https://github.com/pxblue)",
+  "license": "BSD-3-Clause"
+}
