@@ -23,7 +23,7 @@ jobs:
           command: |
             yarn prettier:check
 
-  publish:
+  publish_pxblue_publish:
     docker:
       - image: circleci/node:12.16.3-browsers
     steps:
@@ -35,14 +35,16 @@ jobs:
             echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc 
       - run:
           name: Publish @pxblue/publish
-          command: npx -p @pxblue/publish pxb-publish -p @pxblue/publish -b $CIRCLE_BRANCH
+          command: |
+            cd pxb-publish
+            npx -p @pxblue/publish pxb-publish -p @pxblue/publish -b $CIRCLE_BRANCH
 
 workflows:
   version: 2
   pxblue_cli:
     jobs:
       - build
-      - publish:
+      - publish_pxblue_publish:
           requires:
             - build
           filters:
