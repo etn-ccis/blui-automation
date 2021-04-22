@@ -5,11 +5,11 @@
     "author": "Power Xpert Blue <pxblue@eaton.com> (https://github.com/pxblue)",
     "license": "BSD-3-Clause",
     "repository": {
-        "url": "https://github.com/pxblue/pxblue-cli",
+        "url": "https://github.com/pxblue/automation",
         "type": "git"
     },
     "bugs": {
-        "url": "https://github.com/pxblue/react-component-library/issues"
+        "url": "https://github.com/pxblue/automation/issues"
     },
     "keywords": [
         "pxblue",
