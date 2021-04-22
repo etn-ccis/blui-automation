@@ -1,0 +1,35 @@
+{
+    "name": "@pxblue/publish",
+    "description": "A script that can be used to automatically publish packages to npm.",
+    "version": "1.0.0",
+    "author": "Power Xpert Blue <pxblue@eaton.com> (https://github.com/pxblue)",
+    "license": "BSD-3-Clause",
+    "repository": {
+        "url": "https://github.com/pxblue/pxblue-cli",
+        "type": "git"
+    },
+    "bugs": {
+        "url": "https://github.com/pxblue/react-component-library/issues"
+    },
+    "keywords": [
+        "pxblue",
+        "automation",
+        "publish",
+        "npm",
+        "package"
+    ],
+    "main": "index.js",
+    "bin": {
+        "pxb-publish": "scripts/publish.sh"
+    },
+    "files": [
+        "scripts/",
+        "README.md",
+        "CHANGELOG.md",
+        "LICENSE",
+        "package.json"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 0"
+    }
+}

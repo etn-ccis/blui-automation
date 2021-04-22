@@ -1,0 +1,26 @@
+{
+    "name": "automation",
+    "version": "0.0.0",
+    "description": "This repository contains a number of utilities to assist with the creation and publication of PX Blue packages.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prettier": "prettier \"./**/**.{ts,tsx,js,jsx,json,css,scss,html,md}\" --write",
+        "prettier:check": "prettier \"./**/**.{ts,tsx,js,jsx,json,css,scss,html,md}\" --check"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pxblue/automation.git"
+    },
+    "author": "Power Xpert Blue <pxblue@eaton.com> (https://github.com/pxblue)",
+    "license": "BSD-3-Clause",
+    "bugs": {
+        "url": "https://github.com/pxblue/automation/issues"
+    },
+    "homepage": "https://github.com/pxblue/automation#readme",
+    "prettier": "@pxblue/prettier-config",
+    "devDependencies": {
+        "@pxblue/prettier-config": "^1.0.2",
+        "prettier": "^2.2.1"
+    }
+}
