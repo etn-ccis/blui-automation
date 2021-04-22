@@ -41,7 +41,7 @@ jobs:
 
 workflows:
   version: 2
-  pxblue_cli:
+  pxblue_automation:
     jobs:
       - build
       - publish_pxblue_publish:
