@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BRANCH=master # default
+BRANCH=`dev` # default
 
 # Load the package name and current version from ./package.json
 PACKAGE=`node -p "require('./package.json').name"`
