@@ -39,16 +39,19 @@ jobs:
             cd pxb-publish
             bash scripts/publish.sh -b $CIRCLE_BRANCH
 
+  tag_test:
+    docker:
+      - image: circleci/node:12.16.3-browsers
+    steps:
+      - checkout
+      - run:
+          name: auto tag test
+          command: |
+            cd pxb-tag
+            bash scripts/tag.sh -b $CIRCLE_BRANCH
+
 workflows:
   version: 2
   pxblue_automation:
     jobs:
-      - build
-      - publish_pxblue_publish:
-          requires:
-            - build
-          filters:
-            branches:
-              only:
-                - master
-                - dev
+      - tag_test

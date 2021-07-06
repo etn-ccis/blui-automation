@@ -1,0 +1,34 @@
+{
+    "name": "@pxblue/tag",
+    "description": "A script that can be used to automatically tag packages in a continuous integration pipeline.",
+    "version": "1.0.0",
+    "author": "Power Xpert Blue <pxblue@eaton.com> (https://github.com/pxblue)",
+    "license": "BSD-3-Clause",
+    "repository": {
+        "url": "https://github.com/pxblue/automation",
+        "type": "git"
+    },
+    "bugs": {
+        "url": "https://github.com/pxblue/automation/issues"
+    },
+    "keywords": [
+        "pxblue",
+        "automation",
+        "tag",
+        "git"
+    ],
+    "main": "index.js",
+    "bin": {
+        "pxb-tag": "scripts/tag.sh"
+    },
+    "files": [
+        "scripts/",
+        "README.md",
+        "CHANGELOG.md",
+        "LICENSE",
+        "package.json"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 0"
+    }
+}
