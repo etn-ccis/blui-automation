@@ -18,8 +18,6 @@ do
 done
 
 NPM_LATEST_VERSION=`npm show ${PACKAGE} version`
-NPM_BETA_VERSION=`npm show ${PACKAGE}@beta version`
-NPM_ALPHA_VERSION=`npm show ${PACKAGE}@alpha version`
 
 # Check if this is an alpha, beta, or latest package and run the appropriate publishing command
 if grep -q "alpha" <<< "$CURRENT_VERSION" || grep -q "beta" <<< "$CURRENT_VERSION";
@@ -27,16 +25,16 @@ then
     echo "This is an alpha or beta version - skipping tag."
     exit 0;
 else
-    # If this is not the master branch, do not do any 'latest' publications
+    # If this is not the master branch, do not do any 'latest' releases
     if [ $BRANCH == "master" ];
-    # if ! [ $BRANCH == "master" ];
+    # if ! [ $BRANCH == "master" ]; # USE THIS ONE.
     then
         echo "This is not the master branch - skipping tag."
         exit 0;
     fi
 
     # If this is the master branch (or running locally without a -b flag), allow publishing a latest package
-#    if [ $CURRENT_VERSION == $NPM_LATEST_VERSION ];
+#    if [ $CURRENT_VERSION == $NPM_LATEST_VERSION ]; # USE THIS ONE
     if ! [ $CURRENT_VERSION == $NPM_LATEST_VERSION ];
 
     then
@@ -51,7 +49,6 @@ else
           exit 0;
         fi
 
-        echo $TAG_CHANGELOG_SUCCESS
         # Install Github CLI
         sudo apt-get update
         sudo apt install apt-transport-https
@@ -61,7 +58,7 @@ else
         sudo apt install gh
 
         # Use Github CLI to make a new release
-        gh release create $CURRENT_VERSION -F TAG_CHANGELOG.md
+        gh release create $CURRENT_VERSION -F TAG_CHANGELOG.md -T "$PACKAGE $CURRENT_VERSION"
     else
         echo "Latest version is already published."
     fi
