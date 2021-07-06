@@ -34,8 +34,8 @@ else
     fi
 
     # If this is the master branch (or running locally without a -b flag), allow publishing a latest package
-    if [ $CURRENT_VERSION == $NPM_LATEST_VERSION ];
-#    if ! [ $CURRENT_VERSION == $NPM_LATEST_VERSION ];
+#    if [ $CURRENT_VERSION == $NPM_LATEST_VERSION ];
+    if ! [ $CURRENT_VERSION == $NPM_LATEST_VERSION ];
 
     then
         echo "Publishing new latest";
