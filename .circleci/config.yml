@@ -51,7 +51,7 @@ jobs:
           name: auto tag test
           command: |
             cd pxb-tag
-            bash scripts/tag.sh -b $CIRCLE_BRANCH
+            bash scripts/tag.sh -b $CIRCLE_BRANCH -s -angular-test
 
 workflows:
   version: 2

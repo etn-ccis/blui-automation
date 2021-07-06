@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 BRANCH=dev # default
+TAG_SUFFIX='' # default
 
 # This script assumes that the package.json (version info) and the CHANGELOG are in the same directory.
 
@@ -10,12 +11,18 @@ CURRENT_VERSION=`node -p "require('./package.json').version"`
 
 # Parse the command line arguments and assign to variables
 # -b: branch (default: master)
-while getopts b: flag
+# -s: tag suffix (default: '')
+while getopts b:s: flag
 do
     case "${flag}" in
         b) BRANCH=${OPTARG};;
+        s) TAG_SUFFIX=${OPTARG};;
     esac
 done
+
+echo 'sup'
+echo $TAG_SUFFIX
+echo $BRANCH
 
 NPM_LATEST_VERSION=`npm show ${PACKAGE} version`
 
@@ -58,7 +65,7 @@ else
         sudo apt install gh
 
         # Use Github CLI to make a new release
-        gh release create $CURRENT_VERSION -F TAG_CHANGELOG.md -t "$PACKAGE $CURRENT_VERSION"
+        gh release create "$CURRENT_VERSION$TAG_SUFFIX" -F TAG_CHANGELOG.md -t "$PACKAGE $CURRENT_VERSION"
     else
         echo "Latest version is already published."
     fi

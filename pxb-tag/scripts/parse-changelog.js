@@ -2,7 +2,8 @@ const fs = require('fs');
 
 const VERSION = process.argv.slice(2);
 
-console.log(`Version ${VERSION} \n\n`);
+console.log(`Version ${VERSION}`);
+console.log();
 
 fs.readFile('CHANGELOG.md', 'utf8', (err, data) => {
 
