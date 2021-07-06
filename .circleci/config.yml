@@ -51,6 +51,7 @@ jobs:
           name: auto tag test
           command: |
             cd pxb-tag
+            brew install gh
             gh pr create --title "Bugfix from $CIRCLE_BRANCH"
             bash scripts/tag.sh -b $CIRCLE_BRANCH
 
@@ -58,7 +59,4 @@ workflows:
   version: 2
   pxblue_automation:
     jobs:
-      - gh/release:
-          notes-file: pxb-tag/CHANGELOG.md
-          tag: 1.0.0
-          title: The initial release
+      - tag_test
