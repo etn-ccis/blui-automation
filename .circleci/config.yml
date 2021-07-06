@@ -45,6 +45,13 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install GitHub CLI
+          command: |
+            wget https://github.com/github/hub/releases/download/v2.12.8/hub-linux-amd64-2.12.8.tgz
+            tar zxvf hub-linux-amd64-2.12.8.tgz
+            sudo mv hub-linux-amd64-2.12.8/bin/hub /usr/local/bin/hub
+            sudo chmod +x /usr/local/bin/hub
+      - run:
           name: auto tag test
           command: |
             cd pxb-tag
