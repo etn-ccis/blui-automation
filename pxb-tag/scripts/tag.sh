@@ -61,7 +61,7 @@ else
         sudo apt install gh
 
         # Use Github CLI to make a new release
-        gh release create $CURRENT_VERSION -F scripts/TAG_CHANGELOG.md
+        gh release create $CURRENT_VERSION -F TAG_CHANGELOG.md
     else
         echo "Latest version is already published."
     fi

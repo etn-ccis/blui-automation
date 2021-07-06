@@ -2,6 +2,8 @@ const fs = require('fs');
 
 const VERSION = process.argv.slice(2);
 
+console.log(`Version ${VERSION} \n\n`);
+
 fs.readFile('CHANGELOG.md', 'utf8', (err, data) => {
 
     if (err) {
@@ -20,6 +22,8 @@ fs.readFile('CHANGELOG.md', 'utf8', (err, data) => {
                 }
                 console.log('Successfully written TAG_CHANGELOG.md');
             })
+            return;
         }
     }
+    console.log('Error: Could not find version notes in the changelog.');
 });

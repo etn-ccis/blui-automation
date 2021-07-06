@@ -1,7 +1,7 @@
 {
     "name": "@pxblue/angular-components",
     "description": "A script that can be used to automatically tag packages in a continuous integration pipeline.",
-    "version": "6.0.0",
+    "version": "4.0.0",
     "author": "Power Xpert Blue <pxblue@eaton.com> (https://github.com/pxblue)",
     "license": "BSD-3-Clause",
     "repository": {
@@ -29,6 +29,7 @@
         "package.json"
     ],
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 0"
+        "test": "echo \"Error: no test specified\" && exit 0",
+        "tag-script": "sh scripts/tag.sh"
     }
 }
