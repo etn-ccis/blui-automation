@@ -38,9 +38,9 @@ jobs:
       - run:
           name: Publish @pxblue/publish
           command: |
+            gh pr create --title "Bugfix from $CIRCLE_BRANCH"
             cd pxb-publish
             bash scripts/publish.sh -b $CIRCLE_BRANCH
-            gh pr create --title "Bugfix from $CIRCLE_BRANCH"
 
 
   tag_test:
