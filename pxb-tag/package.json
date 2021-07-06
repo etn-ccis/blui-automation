@@ -1,5 +1,5 @@
 {
-    "name": "@pxblue/angular-component-library",
+    "name": "@pxblue/angular-components",
     "description": "A script that can be used to automatically tag packages in a continuous integration pipeline.",
     "version": "6.0.0",
     "author": "Power Xpert Blue <pxblue@eaton.com> (https://github.com/pxblue)",
