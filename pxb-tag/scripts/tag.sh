@@ -41,7 +41,7 @@ else
         echo "Tagging new latest";
 
         # Create tag-specific CHANGELOG
-        node parse-changelog.js $CURRENT_VERSION`
+        node parse-changelog.js $CURRENT_VERSION
 
         # Install Github CLI
         sudo apt-get update
