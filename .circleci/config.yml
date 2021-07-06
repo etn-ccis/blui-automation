@@ -58,4 +58,7 @@ workflows:
   version: 2
   pxblue_automation:
     jobs:
-      - tag_test
+      - gh/release:
+          notes-file: pxb-tag/CHANGELOG.md
+          tag: 1.0.0
+          title: The initial release
