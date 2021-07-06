@@ -2,6 +2,8 @@
 
 BRANCH=dev # default
 
+# This script assumes that the package.json (version info) and the CHANGELOG are in the same directory.
+
 # Load the package name and current version from ./package.json
 PACKAGE=`node -p "require('./package.json').name"`
 CURRENT_VERSION=`node -p "require('./package.json').version"`
@@ -40,9 +42,16 @@ else
     then
         echo "Tagging new latest";
 
-        # Create tag-specific CHANGELOG
-        node parse-changelog.js $CURRENT_VERSION
+        # Create tag-specific CHANGELOG, catch error.
+        PARSE_SCRIPT_RESPONSE=`node ./parse-changelog.js $CURRENT_VERSION`
+        echo $PARSE_SCRIPT_RESPONSE;
+        if grep -q "Error" <<< "$PARSE_SCRIPT_RESPONSE"
+        then
+          echo "Error writing TAG_CHANGELOG.md"
+          exit 0;
+        fi
 
+        echo $TAG_CHANGELOG_SUCCESS
         # Install Github CLI
         sudo apt-get update
         sudo apt install apt-transport-https
