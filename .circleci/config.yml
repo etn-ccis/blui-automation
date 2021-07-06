@@ -40,8 +40,6 @@ jobs:
           command: |
             cd pxb-publish
             bash scripts/publish.sh -b $CIRCLE_BRANCH
-            gh pr create --title "Bugfix from $CIRCLE_BRANCH"
-            bash scripts/tag.sh -b $CIRCLE_BRANCH
 
 
   tag_test:
@@ -53,14 +51,7 @@ jobs:
           name: auto tag test
           command: |
             cd pxb-tag
-            sudo apt-get update
-
-            sudo apt install apt-transport-https
-            curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
-            echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-            sudo apt update
-            sudo apt install gh
-            gh release create v1.2.3 -F CHANGELOG.md
+            bash scripts/tag.sh -b $CIRCLE_BRANCH
 
 workflows:
   version: 2

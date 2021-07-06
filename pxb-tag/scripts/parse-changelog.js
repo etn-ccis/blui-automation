@@ -7,7 +7,13 @@ fs.readFile('../CHANGELOG.md', 'utf8', (err, data) => {
     const releases = data.split(separator);
     for (const release of releases) {
         if (release.includes(VERSION)) {
-            console.log(`${separator}${release}`);
+            fs.writeFile('TAG_CHANGELOG.md', `## v${release}`, err => {
+                if (err) {
+                    console.error(err)
+                    return
+                }
+                console.log('Successfully written TAG_CHANGELOG.md');
+            })
         }
     }
 });

@@ -38,12 +38,21 @@ else
     if ! [ $CURRENT_VERSION == $NPM_LATEST_VERSION ];
 
     then
-        echo "Publishing new latest";
-       # TAG_DESCRIPTION=`node parse-changelog.js $CURRENT_VERSION`
-       # echo $TAG_DESCRIPTION
-        git tag $CURRENT_VERSION
-        git push origin $CURRENT_VERSION
-        gh release create $CURRENT_VERSION -F ../CHANGELOG.md
+        echo "Tagging new latest";
+
+        # Create tag-specific CHANGELOG
+        node parse-changelog.js $CURRENT_VERSION`
+
+        # Install Github CLI
+        sudo apt-get update
+        sudo apt install apt-transport-https
+        curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+        sudo apt update
+        sudo apt install gh
+
+        # Use Github CLI to make a new release
+        gh release create $CURRENT_VERSION -F TAG_CHANGELOG.md
     else
         echo "Latest version is already published."
     fi
