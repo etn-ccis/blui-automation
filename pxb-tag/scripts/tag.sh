@@ -29,8 +29,7 @@ then
     exit 0;
 else
     # If this is not the master branch, do not do any 'latest' releases
-    if [ $BRANCH == "master" ];
-    # if ! [ $BRANCH == "master" ]; # USE THIS ONE.
+    if ! [ $BRANCH == "master" ];
     then
         echo "This is not the master branch - skipping tag."
         exit 0;
