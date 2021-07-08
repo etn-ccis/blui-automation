@@ -64,7 +64,7 @@ jobs:
           name: Tag @pxblue/publish
           command: |
             cd pxb-publish
-            yarn add @pxblue/tag && bash node_modules/@pxblue/tag/scripts/tag.sh -b $CIRCLE_BRANCH -s -pxb-publish
+            yarn add @pxblue/tag@1.0.0-beta.1 && bash node_modules/@pxblue/tag/scripts/tag.sh -b $CIRCLE_BRANCH -s -pxb-publish
 
   tag_pxblue_tag:
     docker:
