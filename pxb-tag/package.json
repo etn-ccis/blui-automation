@@ -30,6 +30,6 @@
     ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 0",
-        "tag-script": "sh scripts/tag.sh"
+        "pxb-tag": "pxb-tag"
     }
 }
