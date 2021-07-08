@@ -64,7 +64,7 @@ jobs:
           name: Tag @pxblue/publish
           command: |
             cd pxb-publish
-            bash ../pxb-tag/scripts/tag.sh -b $CIRCLE_BRANCH -s -publish
+            npx -p @pxblue/tag pxb-tag -b $CIRCLE_BRANCH -s -pxb-publish
 
   tag_pxblue_tag:
     docker:
@@ -75,7 +75,7 @@ jobs:
           name: Tag @pxblue/tag
           command: |
             cd pxb-tag
-            bash scripts/tag.sh -b $CIRCLE_BRANCH -s -tag
+            npx -p @pxblue/tag pxb-tag -b $CIRCLE_BRANCH -s -pxb-tag
 
 workflows:
   version: 2

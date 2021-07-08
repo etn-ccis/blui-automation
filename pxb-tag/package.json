@@ -1,5 +1,5 @@
 {
-    "name": "@emclaug2/tag-test",
+    "name": "@pxblue/tag-beta.0",
     "description": "A script that can be used to automatically tag packages in a continuous integration pipeline.",
     "version": "1.0.0",
     "author": "Power Xpert Blue <pxblue@eaton.com> (https://github.com/pxblue)",
