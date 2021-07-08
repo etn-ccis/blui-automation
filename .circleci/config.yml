@@ -77,7 +77,7 @@ jobs:
           command: |
             cd pxb-tag
             yarn add @pxblue/tag
-            npx -p @pxblue/tag pxb-tag -b $CIRCLE_BRANCH -s -pxb-tag
+            yarn pxb-tag -b $CIRCLE_BRANCH -s -pxb-tag
 
 workflows:
   version: 2
@@ -102,7 +102,7 @@ workflows:
                 - dev
       - tag_pxblue_publish:
           requires:
-            - build
+            - publish_pxblue_publish
       - tag_pxblue_tag:
           requires:
-            - build
+            - publish_pxblue_tag
