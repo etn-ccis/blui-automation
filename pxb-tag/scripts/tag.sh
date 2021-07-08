@@ -40,7 +40,7 @@ else
     echo "Tagging new latest";
 
     # Create tag-specific CHANGELOG, catch error.
-    PARSE_SCRIPT_RESPONSE=`node scripts/parse-changelog.js $CURRENT_VERSION`
+    PARSE_SCRIPT_RESPONSE=`node node_modules/@pxblue/tag/scripts/parse-changelog.js $CURRENT_VERSION`
     echo $PARSE_SCRIPT_RESPONSE;
     if grep -q "Error" <<< "$PARSE_SCRIPT_RESPONSE"
     then
