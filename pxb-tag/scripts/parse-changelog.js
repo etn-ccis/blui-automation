@@ -6,7 +6,6 @@ console.log(`Version ${VERSION}`);
 console.log();
 
 fs.readFile('CHANGELOG.md', 'utf8', (err, data) => {
-
     if (err) {
         console.log(err);
         return;
@@ -16,13 +15,13 @@ fs.readFile('CHANGELOG.md', 'utf8', (err, data) => {
     const releases = data.split(separator);
     for (const release of releases) {
         if (release.includes(VERSION)) {
-            fs.writeFile('TAG_CHANGELOG.md', `## v${release}`, err => {
+            fs.writeFile('TAG_CHANGELOG.md', `## v${release}`, (err) => {
                 if (err) {
-                    console.log(err)
-                    return
+                    console.log(err);
+                    return;
                 }
                 console.log('Successfully written TAG_CHANGELOG.md');
-            })
+            });
             return;
         }
     }
