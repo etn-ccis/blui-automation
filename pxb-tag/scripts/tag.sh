@@ -20,10 +20,7 @@ do
     esac
 done
 
-echo $PWD
-
 NPM_LATEST_VERSION=`npm show ${PACKAGE} version`
-PARSE_SCRIPT=$PWD/scripts/parse-changelog.js
 
 # Check if this is an alpha, beta, or latest package and run the appropriate publishing command
 if grep -q "alpha" <<< "$CURRENT_VERSION" || grep -q "beta" <<< "$CURRENT_VERSION";
@@ -43,7 +40,7 @@ else
     echo "Tagging new latest";
 
     # Create tag-specific CHANGELOG, catch error.
-    PARSE_SCRIPT_RESPONSE=`node "$PARSE_SCRIPT" $CURRENT_VERSION`
+    PARSE_SCRIPT_RESPONSE=`node node_modules/@pxblue/tag/scripts/parse-changelog.js $CURRENT_VERSION`
     echo $PARSE_SCRIPT_RESPONSE;
     if grep -q "Error" <<< "$PARSE_SCRIPT_RESPONSE"
     then
