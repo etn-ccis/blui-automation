@@ -38,12 +38,12 @@ else
 
     # Create tag-specific CHANGELOG, catch error.
     PARSE_SCRIPT_RESPONSE=`pxb-parse-changelog $CURRENT_VERSION`
-    echo $PARSE_SCRIPT_RESPONSE;
-    if grep -q "Error" <<< "$PARSE_SCRIPT_RESPONSE"
+    if [ $? -eq 1 ]
     then
       echo "Error writing TAG_CHANGELOG.md"
       exit 0;
     fi
+    echo "TAG_CHANGELOG.md written successfully."
 
     # Use Github CLI to make a new release
     gh release create "v$CURRENT_VERSION$TAG_SUFFIX" -F TAG_CHANGELOG.md -t "$PACKAGE v$CURRENT_VERSION" --target master

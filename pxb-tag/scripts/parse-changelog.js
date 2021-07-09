@@ -1,31 +1,37 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-
+const process = require('process');
 const VERSION = process.argv.slice(2);
-
-console.log(`Version ${VERSION}`);
-console.log();
 
 fs.readFile('CHANGELOG.md', 'utf8', (err, data) => {
     if (err) {
-        console.log(err);
-        return;
+        console.error(err);
+        process.exit(1);
     }
 
     const separator = '## v';
     const releases = data.split(separator);
+    let found = false;
+
     for (const release of releases) {
+        console.log(release);
+        console.log(VERSION);
         if (release.includes(VERSION)) {
+            found = true;
             fs.writeFile('TAG_CHANGELOG.md', `## v${release}`, (err) => {
                 if (err) {
-                    console.log(err);
-                    return;
+                    console.error(err);
+                    process.exit(1);
                 }
                 console.log('Successfully written TAG_CHANGELOG.md');
+                process.exit(0);
             });
-            return;
         }
     }
-    console.log('Error: Could not find version notes in the changelog.');
+
+    if (!found) {
+        console.error(`Error: Could not find version ${VERSION} notes in the changelog.`);
+        process.exit(1);
+    }
 });
