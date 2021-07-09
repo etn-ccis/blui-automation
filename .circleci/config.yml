@@ -101,15 +101,12 @@ workflows:
               only:
                 - master
                 - dev
-      - gh/release:
-          notes-file: ./pxb-tag/CHANGELOG.md
+      - gh/setup:
           requires:
             - build
-          tag: 1.0.0
-          title: The initial release
       - tag_pxblue_publish:
           requires:
-            - build
+            - gh/setup
       - tag_pxblue_tag:
           requires:
             - publish_pxblue_tag
