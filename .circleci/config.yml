@@ -102,7 +102,7 @@ workflows:
                 - dev
       - tag_pxblue_publish:
           requires:
-            - publish_pxblue_publish
+            - build
       - tag_pxblue_tag:
           requires:
             - publish_pxblue_tag
