@@ -31,7 +31,7 @@
     ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 0",
-        "pxb-tag": "pxb-tag"
+        "pxb-tag": "yarn add @pxblue/tag && pxb-tag"
     },
     "devDependencies": {
         "@pxblue/tag": "^1.0.0-beta.4"
