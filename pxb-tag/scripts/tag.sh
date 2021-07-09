@@ -28,7 +28,7 @@ then
     echo "This is an alpha or beta version - skipping tag."
     exit 0;
 else
-    # If this is not the master branch, do not do any 'latest' releases
+    # If this is not the master branch, do not do any tagging
     if ! [ $BRANCH == "master" ];
     then
         echo "This is not the master branch - skipping tag."
