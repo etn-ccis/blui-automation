@@ -16,7 +16,7 @@ In order to use this utility you must have the following installed:
 You can use this package by running it in the root directory of your project with npx (recommended):
 
 ```
-npx -p @pxblue/publish pxb-publish -b <branch-name>
+npx -p @pxblue/tag pxb-tag -b <branch-name> -s <tag-suffix>
 ```
 
 > The `root` directory assumes a `package.json` and a `CHANGELOG.md` are placed within the same folder.
