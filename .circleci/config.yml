@@ -62,6 +62,7 @@ jobs:
       - image: circleci/node:12.16.3-browsers
     steps:
       - checkout
+      - gh/setup
       - run:
           name: Tag @pxblue/publish
           command: |
@@ -101,12 +102,9 @@ workflows:
               only:
                 - master
                 - dev
-      - gh/setup:
-          requires:
-            - build
       - tag_pxblue_publish:
           requires:
-            - gh/setup
+            - build
       - tag_pxblue_tag:
           requires:
             - publish_pxblue_tag
