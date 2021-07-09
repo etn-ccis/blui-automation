@@ -22,7 +22,7 @@ done
 
 NPM_LATEST_VERSION=`npm show ${PACKAGE} version`
 
-# Check if this is an alpha, beta, or latest package and run the appropriate publishing command
+# Check if this is an alpha, beta, or latest package and run the appropriate tagging command
 if grep -q "alpha" <<< "$CURRENT_VERSION" || grep -q "beta" <<< "$CURRENT_VERSION";
 then
     echo "This is an alpha or beta version - skipping tag."
