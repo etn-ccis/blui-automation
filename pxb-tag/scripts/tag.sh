@@ -45,17 +45,6 @@ else
       exit 0;
     fi
 
-    # Install Github CLI
-    if ! [ -x "$(command -v gh)" ]; then
-      echo 'Warning: gh is not installed; installing gh for linux' >&2
-      sudo apt-get update
-      sudo apt install apt-transport-https
-      curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/githubcli-archive-keyring.gpg
-      echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-      sudo apt update
-      sudo apt install gh
-    fi
-
     # Use Github CLI to make a new release
     gh release create "v$CURRENT_VERSION$TAG_SUFFIX" -F TAG_CHANGELOG.md -t "$PACKAGE v$CURRENT_VERSION" --target master
 fi
