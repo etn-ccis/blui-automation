@@ -38,4 +38,4 @@ The following table list out some options for the `pxb-tag` command. All these o
 | `-b`   | (default: dev) The branch you are on. |
 | `-s`   | (default: '') The tag suffix.         |
 
-> The branch flag is used to determine whether a latest package can be published. Latest packages may only be published for the master branch (-b master).
+> The branch flag is used to determine whether a latest package can be published. Tags may only be created for the master branch (-b master).
