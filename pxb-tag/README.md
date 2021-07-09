@@ -1,7 +1,7 @@
 # @pxblue/tag
 
 This Command Line tool is a utility for automatically creating tags and github releases through a continuous integration pipeline.
-Given a `package.json` and a `CHANGELOG.md`, it will parse out the latest release notes, install the Github CLI and publish the latest release.
+Given a `package.json` and a `CHANGELOG.md`, it will parse out the latest release notes and publish the latest release.
 
 ## Prerequisites
 
@@ -9,25 +9,17 @@ In order to use this utility you must have the following installed:
 
 -   [NodeJS](https://nodejs.org/en/download/) 12+
 -   npm
+-   [Github CLI](https://cli.github.com/)
 
 ## Usage
 
-This package is intended to run only within a Linux image.
-
-Add the following to your package.json scripts section:
+You can use this package by running it in the root directory of your project with npx (recommended):
 
 ```
-"scripts": {
-    "pxb-tag": "pxb-tag"
-}
+npx -p @pxblue/publish pxb-publish -b <branch-name>
 ```
 
-```
-cd [root]
-yarn add @pxblue/tag && yarn pxb-tag -b <branch-name> -s <tag-suffix>
-```
-
-> The `root` directory assumes a `package.json` and a `CHANGELOG.md` are available.
+> The `root` directory assumes a `package.json` and a `CHANGELOG.md` are placed within the same folder.
 
 #### Available options
 
