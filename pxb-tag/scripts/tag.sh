@@ -20,9 +20,8 @@ do
     esac
 done
 
-NPM_LATEST_VERSION=`npm show ${PACKAGE} version`
-
 # Check if this is an alpha, beta, or latest package and run the appropriate tagging command
+# Check if this is an alpha, beta, or latest package and run the appropriate publishing command
 if grep -q "alpha" <<< "$CURRENT_VERSION" || grep -q "beta" <<< "$CURRENT_VERSION";
 then
     echo "This is an alpha or beta version - skipping tag."
@@ -59,5 +58,5 @@ else
     fi
 
     # Use Github CLI to make a new release
-    gh release create "v$CURRENT_VERSION$TAG_SUFFIX" -F TAG_CHANGELOG.md -t "$PACKAGE v$CURRENT_VERSION"
+    gh release create "v$CURRENT_VERSION$TAG_SUFFIX" -F TAG_CHANGELOG.md -t "$PACKAGE v$CURRENT_VERSION" --target master
 fi
