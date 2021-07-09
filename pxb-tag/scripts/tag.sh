@@ -35,7 +35,7 @@ else
         exit 0;
     fi
 
-    # If this is the master branch (or running locally without a -b flag), allow publishing a latest package
+    # If this is the master branch (or running locally without a -b flag), allow tagging
     echo "Tagging new latest";
 
     # Create tag-specific CHANGELOG, catch error.
