@@ -7,3 +7,4 @@ This repository contains a number of utilities to assist with the creation and p
 The following utility packages are contained in this repository:
 
 -   [@pxblue/publish](./pxb-publish): A utility for automatically publishing packages based on the specified version number.
+-   [@pxblue/tag](./pxb-tag): A utility for automatically tagging a release in github by parsing a CHANGELOG.

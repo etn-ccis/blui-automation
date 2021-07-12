@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs:
+  gh: circleci/github-cli@1.0
 jobs:
   build:
     working_directory: ~/automation
@@ -32,12 +34,51 @@ jobs:
           name: Authenticate with registry
           command: |
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
-            echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc 
+            echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run:
           name: Publish @pxblue/publish
           command: |
             cd pxb-publish
             bash scripts/publish.sh -b $CIRCLE_BRANCH
+
+  publish_pxblue_tag:
+    docker:
+      - image: circleci/node:12.16.3-browsers
+    steps:
+      - checkout
+      - run:
+          name: Authenticate with registry
+          command: |
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+            echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+      - run:
+          name: Publish @pxblue/tag
+          command: |
+            cd pxb-tag
+            bash ../pxb-publish/scripts/publish.sh -b $CIRCLE_BRANCH
+
+  tag_pxblue_publish:
+    docker:
+      - image: circleci/node:12.16.3-browsers
+    steps:
+      - checkout
+      - gh/setup
+      - run:
+          name: Tag @pxblue/publish
+          command: |
+            cd pxb-publish
+            yarn tag-package -b $CIRCLE_BRANCH -s -pxb-publish
+
+  tag_pxblue_tag:
+    docker:
+      - image: circleci/node:12.16.3-browsers
+    steps:
+      - checkout
+      - run:
+          name: Tag @pxblue/tag
+          command: |
+            cd pxb-tag
+            yarn tag-package -b $CIRCLE_BRANCH -s -pxb-tag
 
 workflows:
   version: 2
@@ -52,3 +93,17 @@ workflows:
               only:
                 - master
                 - dev
+      - publish_pxblue_tag:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
+                - dev
+      - tag_pxblue_publish:
+          requires:
+            - publish_pxblue_publish
+      - tag_pxblue_tag:
+          requires:
+            - publish_pxblue_tag
