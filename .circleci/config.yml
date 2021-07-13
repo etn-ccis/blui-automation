@@ -74,6 +74,7 @@ jobs:
       - image: circleci/node:12.16.3-browsers
     steps:
       - checkout
+      - gh/setup
       - run:
           name: Tag @pxblue/tag
           command: |
