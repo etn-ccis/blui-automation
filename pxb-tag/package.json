@@ -1,7 +1,7 @@
 {
-    "name": "@pxblue/publish",
-    "description": "A script that can be used to automatically publish packages to npm.",
-    "version": "1.0.2",
+    "name": "@pxblue/tag",
+    "description": "A script that can be used to automatically tag packages in a continuous integration pipeline.",
+    "version": "1.0.0",
     "author": "Power Xpert Blue <pxblue@eaton.com> (https://github.com/pxblue)",
     "license": "BSD-3-Clause",
     "repository": {
@@ -14,13 +14,14 @@
     "keywords": [
         "pxblue",
         "automation",
-        "publish",
-        "npm",
-        "package"
+        "tag",
+        "git",
+        "release"
     ],
     "main": "index.js",
     "bin": {
-        "pxb-publish": "scripts/publish.sh"
+        "pxb-tag": "scripts/tag.sh",
+        "pxb-parse-changelog": "scripts/parse-changelog.js"
     },
     "files": [
         "scripts/",
@@ -31,6 +32,7 @@
     ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 0",
-        "tag-package": " npx -p @pxblue/tag pxb-tag"
+        "tag-package": "npx -p @pxblue/tag pxb-tag",
+        "publish:package": "set npm_config_yes=true && npx -p @pxblue/publish pxb-publish"
     }
 }
