@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.0 (July 14, 2021)
+
+### Added
+
+-   Ability to publish a brand new package for the first time with the access flag (public) applied.
+
 ## v1.0.2 (April 27, 2021)
 
 ### Changed
