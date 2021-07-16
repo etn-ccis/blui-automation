@@ -50,7 +50,7 @@ else
     if grep -q "dv$CURRENT_VERSION$TAG_SUFFIX" <<< "$PREV_RELEASES";
     then
         echo "Current version is already tagged."
-        exit 1;
+        exit 0;
     fi
 
 
