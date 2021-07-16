@@ -47,11 +47,10 @@ else
 
     # Get list of previous releases, exit if already released.
     PREV_RELEASES=`gh release list`
-    echo $PREV_RELEASES
     if grep -q "dv$CURRENT_VERSION$TAG_SUFFIX" <<< "$PREV_RELEASES";
     then
         echo "Current version is already tagged."
-        exit 0;
+        exit 1;
     fi
 
 
