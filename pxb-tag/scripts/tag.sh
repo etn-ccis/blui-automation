@@ -45,6 +45,15 @@ else
     fi
     echo "TAG_CHANGELOG.md written successfully."
 
+    # Get list of previous releases, exit if already released.
+    PREV_RELEASES=`gh release list`
+    if grep -q "dv$CURRENT_VERSION$TAG_SUFFIX" <<< "$PREV_RELEASES";
+    then
+        echo "Current version is already tagged."
+        exit 0;
+    fi
+
+
     # Use Github CLI to make a new release
     gh release create "v$CURRENT_VERSION$TAG_SUFFIX" -F TAG_CHANGELOG.md -t "$PACKAGE v$CURRENT_VERSION" --target master
 fi
