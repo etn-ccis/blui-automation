@@ -4,7 +4,7 @@
 
 ### Changed
 
--  Changed default suffix to be `-package-name`.
+-   Changed default suffix to be `-package-name`.
 
 ### Fixed
 
