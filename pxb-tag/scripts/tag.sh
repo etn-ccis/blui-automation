@@ -20,6 +20,9 @@ do
     esac
 done
 
+# Default tag suffix to package name if not provided.
+[ -z "$TAG_SUFFIX" ] && TAG_SUFFIX="-${PACKAGE##@pxblue/}"
+
 # Check if this is an alpha, beta, or latest package and run the appropriate tagging command
 if grep -q "alpha" <<< "$CURRENT_VERSION" || grep -q "beta" <<< "$CURRENT_VERSION";
 then
@@ -47,7 +50,7 @@ else
 
     # Get list of previous releases, exit if already released.
     PREV_RELEASES=`gh release list`
-    if grep -q "dv$CURRENT_VERSION$TAG_SUFFIX" <<< "$PREV_RELEASES";
+    if grep -q "v$CURRENT_VERSION$TAG_SUFFIX" <<< "$PREV_RELEASES";
     then
         echo "Current version is already tagged."
         exit 0;

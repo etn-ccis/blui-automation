@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.0.2 (July 20, 2021)
+
+### Changed
+
+-   Changed default suffix to be `-package-name`.
+
+### Fixed
+
+-   Fixed previous fix.
+
 ## v1.0.1 (July 19, 2021)
 
 ### Fixed

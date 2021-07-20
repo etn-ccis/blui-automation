@@ -67,7 +67,7 @@ jobs:
           name: Tag @pxblue/publish
           command: |
             cd pxb-publish
-            yarn tag-package -b $CIRCLE_BRANCH -s -pxb-publish
+            yarn tag-package -b $CIRCLE_BRANCH
 
   tag_pxblue_tag:
     docker:
@@ -79,7 +79,7 @@ jobs:
           name: Tag @pxblue/tag
           command: |
             cd pxb-tag
-            yarn tag-package -b $CIRCLE_BRANCH -s -pxb-tag
+            yarn tag-package -b $CIRCLE_BRANCH
 
 workflows:
   version: 2
