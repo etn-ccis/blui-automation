@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.0.2 (July 19, 2021)
+## v1.0.2 (July 20, 2021)
 
 ### Fixed
 
