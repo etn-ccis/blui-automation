@@ -20,6 +20,9 @@ do
     esac
 done
 
+# Default tag suffix to package name if not provided.
+[ -z "$TAG_SUFFIX" ] && TAG_SUFFIX="-${PACKAGE##@pxblue/}"
+
 # Check if this is an alpha, beta, or latest package and run the appropriate tagging command
 if grep -q "alpha" <<< "$CURRENT_VERSION" || grep -q "beta" <<< "$CURRENT_VERSION";
 then
