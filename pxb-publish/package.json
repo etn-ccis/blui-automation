@@ -31,6 +31,6 @@
     ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 0",
-        "tag-package": "bash ../pxb-tag/scripts/tag.sh"
+        "tag:package": "npx -p @pxblue/tag pxb-tag"
     }
 }

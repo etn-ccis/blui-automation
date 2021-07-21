@@ -38,8 +38,7 @@ jobs:
       - run:
           name: Publish @pxblue/publish
           command: |
-            cd pxb-publish
-            bash scripts/publish.sh -b $CIRCLE_BRANCH
+            cd pxb-publish && bash scripts/publish.sh -b $CIRCLE_BRANCH
 
   publish_pxblue_tag:
     docker:
@@ -54,8 +53,7 @@ jobs:
       - run:
           name: Publish @pxblue/tag
           command: |
-            cd pxb-tag
-            bash ../pxb-publish/scripts/publish.sh -b $CIRCLE_BRANCH
+            cd pxb-tag && yarn publish:package -b $CIRCLE_BRANCH
 
   tag_pxblue_publish:
     docker:
@@ -66,8 +64,7 @@ jobs:
       - run:
           name: Tag @pxblue/publish
           command: |
-            cd pxb-publish
-            yarn tag-package -b $CIRCLE_BRANCH
+            cd pxb-publish && yarn tag:package -b $CIRCLE_BRANCH
 
   tag_pxblue_tag:
     docker:
@@ -78,8 +75,7 @@ jobs:
       - run:
           name: Tag @pxblue/tag
           command: |
-            cd pxb-tag
-            yarn tag-package -b $CIRCLE_BRANCH
+            cd pxb-tag && yarn tag:package -b $CIRCLE_BRANCH
 
 workflows:
   version: 2
