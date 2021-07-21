@@ -21,7 +21,6 @@
     "main": "index.js",
     "bin": {
         "pxb-publish": "scripts/publish.sh",
-        "pxb-parse-changelog": "../pxb-tag/scripts/parse-changelog.js"
     },
     "files": [
         "scripts/",
