@@ -2,7 +2,7 @@
     "name": "@brightlayer-ui/publish",
     "description": "A script that can be used to automatically publish packages to npm.",
     "version": "1.1.0",
-    "author": "Power Xpert Blue <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
+    "author": "Brightlayer UI <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
     "license": "BSD-3-Clause",
     "repository": {
         "url": "https://github.com/brightlayer-ui/automation",
