@@ -1,18 +1,18 @@
 {
-    "name": "@pxblue/tag",
+    "name": "@brightlayer-ui/tag",
     "description": "A script that can be used to automatically tag packages in a continuous integration pipeline.",
     "version": "1.0.2",
-    "author": "Power Xpert Blue <pxblue@eaton.com> (https://github.com/pxblue)",
+    "author": "Power Xpert Blue <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
     "license": "BSD-3-Clause",
     "repository": {
-        "url": "https://github.com/pxblue/automation",
+        "url": "https://github.com/brightlayer-ui/automation",
         "type": "git"
     },
     "bugs": {
-        "url": "https://github.com/pxblue/automation/issues"
+        "url": "https://github.com/brightlayer-ui/automation/issues"
     },
     "keywords": [
-        "pxblue",
+        "brightlayer-ui",
         "automation",
         "tag",
         "git",
@@ -20,8 +20,8 @@
     ],
     "main": "index.js",
     "bin": {
-        "pxb-tag": "scripts/tag.sh",
-        "pxb-parse-changelog": "scripts/parse-changelog.js"
+        "blui-tag": "scripts/tag.sh",
+        "blui-parse-changelog": "scripts/parse-changelog.js"
     },
     "files": [
         "scripts/",
@@ -32,7 +32,7 @@
     ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 0",
-        "publish:package": "set npm_config_yes=true && npx -p @pxblue/publish pxb-publish",
-        "tag:package": "npx -p @pxblue/tag pxb-tag"
+        "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
+        "tag:package": "npx -p @brightlayer-ui/tag blui-tag"
     }
 }

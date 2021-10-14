@@ -1,4 +1,4 @@
-# @pxblue/publish
+# @brightlayer-ui/publish
 
 This Command Line tool is a utility for automatically publishing NPM packages based on the version number in the package.json file.
 
@@ -14,12 +14,12 @@ In order to use this utility you must have the following installed:
 You can use this package without installing any global or local dependencies by running it with npx (recommended):
 
 ```
-npx -p @pxblue/publish pxb-publish -b <branch-name>
+npx -p @brightlayer-ui/publish blui-publish -b <branch-name>
 ```
 
 #### Available options
 
-The following table list out some options for the `pxb-publish` command. All these options can be configured:
+The following table list out some options for the `blui-publish` command. All these options can be configured:
 
 | Option | Description                           |
 | ------ | ------------------------------------- |

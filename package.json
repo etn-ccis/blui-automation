@@ -10,14 +10,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/pxblue/automation.git"
+        "url": "git+https://github.com/brightlayer-ui/automation.git"
     },
-    "author": "Power Xpert Blue <pxblue@eaton.com> (https://github.com/pxblue)",
+    "author": "Power Xpert Blue <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
     "license": "BSD-3-Clause",
     "bugs": {
-        "url": "https://github.com/pxblue/automation/issues"
+        "url": "https://github.com/brightlayer-ui/automation/issues"
     },
-    "homepage": "https://github.com/pxblue/automation#readme",
+    "homepage": "https://github.com/brightlayer-ui/automation#readme",
     "prettier": "@pxblue/prettier-config",
     "devDependencies": {
         "@pxblue/prettier-config": "^1.0.2",
