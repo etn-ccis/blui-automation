@@ -15,7 +15,6 @@ fs.readFile('CHANGELOG.md', 'utf8', (err, data) => {
     let found = false;
 
     for (const release of releases) {
-
         console.log(release);
         console.log(VERSION);
 
