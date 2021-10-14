@@ -4,7 +4,7 @@
 
 ### Fixed
 
--   Fixed bug in the `parse-changelog` script where it would create Github releases using older patch notes when resolving duplicate versions. 
+-   Fixed bug in the `parse-changelog` script where it would create Github releases using older patch notes when resolving duplicate versions.
 
 ## v1.0.2 (October 14, 2021)
 
