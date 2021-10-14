@@ -2,7 +2,7 @@
     "name": "@brightlayer-ui/tag",
     "description": "A script that can be used to automatically tag packages in a continuous integration pipeline.",
     "version": "1.0.2",
-    "author": "Power Xpert Blue <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
+    "author": "Brightlayer UI <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
     "license": "BSD-3-Clause",
     "repository": {
         "url": "https://github.com/brightlayer-ui/automation",
