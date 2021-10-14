@@ -25,7 +25,7 @@ jobs:
           command: |
             yarn prettier:check
 
-  publish_pxblue_publish:
+  publish_blui_publish:
     docker:
       - image: circleci/node:12.16.3-browsers
     steps:
@@ -36,12 +36,11 @@ jobs:
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
             echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run:
-          name: Publish @pxblue/publish
+          name: Publish @brightlayer-ui/publish
           command: |
-            cd pxb-publish
-            bash scripts/publish.sh -b $CIRCLE_BRANCH
+            cd blui-publish && bash scripts/publish.sh -b $CIRCLE_BRANCH
 
-  publish_pxblue_tag:
+  publish_blui_tag:
     docker:
       - image: circleci/node:12.16.3-browsers
     steps:
@@ -52,41 +51,38 @@ jobs:
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
             echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run:
-          name: Publish @pxblue/tag
+          name: Publish @brightlayer-ui/tag
           command: |
-            cd pxb-tag
-            bash ../pxb-publish/scripts/publish.sh -b $CIRCLE_BRANCH
+            cd blui-tag && yarn publish:package -b $CIRCLE_BRANCH
 
-  tag_pxblue_publish:
+  tag_blui_publish:
     docker:
       - image: circleci/node:12.16.3-browsers
     steps:
       - checkout
       - gh/setup
       - run:
-          name: Tag @pxblue/publish
+          name: Tag @brightlayer-ui/publish
           command: |
-            cd pxb-publish
-            yarn tag-package -b $CIRCLE_BRANCH
+            cd blui-publish && yarn tag:package -b $CIRCLE_BRANCH
 
-  tag_pxblue_tag:
+  tag_blui_tag:
     docker:
       - image: circleci/node:12.16.3-browsers
     steps:
       - checkout
       - gh/setup
       - run:
-          name: Tag @pxblue/tag
+          name: Tag @brightlayer-ui/tag
           command: |
-            cd pxb-tag
-            yarn tag-package -b $CIRCLE_BRANCH
+            cd blui-tag && yarn tag:package -b $CIRCLE_BRANCH
 
 workflows:
   version: 2
-  pxblue_automation:
+  blui_automation:
     jobs:
       - build
-      - publish_pxblue_publish:
+      - publish_blui_publish:
           requires:
             - build
           filters:
@@ -94,7 +90,7 @@ workflows:
               only:
                 - master
                 - dev
-      - publish_pxblue_tag:
+      - publish_blui_tag:
           requires:
             - build
           filters:
@@ -102,9 +98,9 @@ workflows:
               only:
                 - master
                 - dev
-      - tag_pxblue_publish:
+      - tag_blui_publish:
           requires:
-            - publish_pxblue_publish
-      - tag_pxblue_tag:
+            - publish_blui_publish
+      - tag_blui_tag:
           requires:
-            - publish_pxblue_tag
+            - publish_blui_tag

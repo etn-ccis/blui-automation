@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Copyright (c) 2021-present, Eaton
+# All rights reserved.
+# This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
+
 BRANCH=dev # default
 TAG_SUFFIX='' # default
 
@@ -21,7 +25,7 @@ do
 done
 
 # Default tag suffix to package name if not provided.
-[ -z "$TAG_SUFFIX" ] && TAG_SUFFIX="-${PACKAGE##@pxblue/}"
+[ -z "$TAG_SUFFIX" ] && TAG_SUFFIX="-${PACKAGE##@brightlayer-ui/}"
 
 # Check if this is an alpha, beta, or latest package and run the appropriate tagging command
 if grep -q "alpha" <<< "$CURRENT_VERSION" || grep -q "beta" <<< "$CURRENT_VERSION";
@@ -40,7 +44,7 @@ else
     echo "Tagging new latest";
 
     # Create tag-specific CHANGELOG, catch error.
-    PARSE_SCRIPT_RESPONSE=`pxb-parse-changelog $CURRENT_VERSION`
+    PARSE_SCRIPT_RESPONSE=`blui-parse-changelog $CURRENT_VERSION`
     if [ $? -eq 1 ]
     then
       echo "Error writing TAG_CHANGELOG.md"

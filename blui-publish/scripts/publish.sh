@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Copyright (c) 2021-present, Eaton
+# All rights reserved.
+# This code is licensed under the BSD-3 license found in the LICENSE file in the root directory of this source tree and at https://opensource.org/licenses/BSD-3-Clause.
+
+
 BRANCH=dev # default
 FIRST_TIME=false # is this the first time publishing the package?
 

@@ -1,18 +1,18 @@
 {
-    "name": "@pxblue/publish",
+    "name": "@brightlayer-ui/publish",
     "description": "A script that can be used to automatically publish packages to npm.",
     "version": "1.1.0",
-    "author": "Power Xpert Blue <pxblue@eaton.com> (https://github.com/pxblue)",
+    "author": "Brightlayer UI <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
     "license": "BSD-3-Clause",
     "repository": {
-        "url": "https://github.com/pxblue/automation",
+        "url": "https://github.com/brightlayer-ui/automation",
         "type": "git"
     },
     "bugs": {
-        "url": "https://github.com/pxblue/automation/issues"
+        "url": "https://github.com/brightlayer-ui/automation/issues"
     },
     "keywords": [
-        "pxblue",
+        "brightlayer-ui",
         "automation",
         "publish",
         "npm",
@@ -20,7 +20,7 @@
     ],
     "main": "index.js",
     "bin": {
-        "pxb-publish": "scripts/publish.sh"
+        "blui-publish": "scripts/publish.sh"
     },
     "files": [
         "scripts/",
@@ -31,6 +31,6 @@
     ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 0",
-        "tag-package": "bash ../pxb-tag/scripts/tag.sh"
+        "tag:package": "npx -p @brightlayer-ui/tag blui-tag"
     }
 }
