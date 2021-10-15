@@ -18,6 +18,7 @@ fs.readFile('CHANGELOG.md', 'utf8', (err, data) => {
         console.log(release);
         console.log(VERSION);
 
+        // Once the most-recent occurrence of a version is found, skip next steps.
         if (found) {
             continue;
         }
