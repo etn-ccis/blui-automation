@@ -17,6 +17,12 @@ fs.readFile('CHANGELOG.md', 'utf8', (err, data) => {
     for (const release of releases) {
         console.log(release);
         console.log(VERSION);
+
+        // Once the most-recent occurrence of a version is found, skip next steps.
+        if (found) {
+            continue;
+        }
+
         if (release.includes(VERSION)) {
             found = true;
             fs.writeFile('TAG_CHANGELOG.md', `## v${release}`, (err) => {
