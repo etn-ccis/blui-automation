@@ -64,7 +64,7 @@ jobs:
       - run:
           name: Tag @brightlayer-ui/publish
           command: |
-            cd blui-publish && yarn tag:package -b $CIRCLE_BRANCH -s blui-publish
+            cd blui-publish && yarn tag:package -b $CIRCLE_BRANCH -s -blui-publish
 
   tag_blui_tag:
     docker:
@@ -75,7 +75,7 @@ jobs:
       - run:
           name: Tag @brightlayer-ui/tag
           command: |
-            cd blui-tag && yarn tag:package -b $CIRCLE_BRANCH -s blui-tag
+            cd blui-tag && yarn tag:package -b $CIRCLE_BRANCH -s -blui-tag
 
 workflows:
   version: 2
