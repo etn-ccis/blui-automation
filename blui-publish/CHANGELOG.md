@@ -8,7 +8,7 @@
 
 ## Package Migration Notice
 
-> Previous versions listed after this indicator refer to our deprecated `@pxblue` packages.
+Previous versions listed after this indicator refer to our deprecated `@pxblue` packages.
 
 ---
 
