@@ -1,7 +1,7 @@
 {
     "name": "automation",
     "version": "0.0.0",
-    "description": "This repository contains a number of utilities to assist with the creation and publication of PX Blue packages.",
+    "description": "This repository contains a number of utilities to assist with the creation and publication of Brightlayer UI packages.",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,15 +12,15 @@
         "type": "git",
         "url": "git+https://github.com/brightlayer-ui/automation.git"
     },
-    "author": "Power Xpert Blue <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
+    "author": "Brightlayer UI <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
     "license": "BSD-3-Clause",
     "bugs": {
         "url": "https://github.com/brightlayer-ui/automation/issues"
     },
     "homepage": "https://github.com/brightlayer-ui/automation#readme",
-    "prettier": "@pxblue/prettier-config",
+    "prettier": "@brightlayer-ui/prettier-config",
     "devDependencies": {
-        "@pxblue/prettier-config": "^1.0.2",
+        "@brightlayer-ui/prettier-config": "^1.0.3",
         "prettier": "^2.2.1"
     }
 }
