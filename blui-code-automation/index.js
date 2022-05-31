@@ -9,7 +9,7 @@ const calcAutomationPercentage = (unitTests, manualTests) => ((unitTests / (unit
 axios
     .all([
         axios.get(
-            'https://raw.githubusercontent.com/brightlayer-ui/angular-workflows/dev/login-workflow/VALIDATION.md',
+            'https://raw.githubusercontent.com/brightlayer-ui/angular-workflows/dev/login-workflow/VALIDATION.md'
         ),
     ])
     .then((data) => {
