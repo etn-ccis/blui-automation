@@ -1,0 +1,28 @@
+{
+    "name": "blui-code-automation",
+    "description": "A script that can be used to calculate platform code automation metric.",
+    "version": "1.0.0",
+    "author": "Brightlayer UI <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
+    "license": "BSD-3-Clause",
+    "repository": {
+        "url": "https://github.com/brightlayer-ui/automation",
+        "type": "git"
+    },
+    "bugs": {
+        "url": "https://github.com/brightlayer-ui/automation/issues"
+    },
+    "keywords": [
+        "brightlayer-ui",
+        "automation",
+        "code",
+        "coverage"
+    ],
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 0",
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "axios": "^0.27.2"
+    }
+}
