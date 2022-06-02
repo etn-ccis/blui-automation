@@ -1,5 +1,6 @@
-var axios = require('axios');
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
+var axios = require('axios');
 let platformUnitTestCount = 0;
 let platformManualTestCount = 0;
 
@@ -8,12 +9,12 @@ const calcAutomationPercentage = (unitTests, manualTests) => ((unitTests / (unit
 axios
     .all([
         axios.get(
-            'https://raw.githubusercontent.com/brightlayer-ui/angular-workflows/feature/validation/login-workflow/VALIDATION.md'
+            'https://raw.githubusercontent.com/brightlayer-ui/angular-workflows/dev/login-workflow/VALIDATION.md'
         ),
     ])
     .then((data) => {
         data.map((response) => {
-            const sections = response.data.split('###');
+            const sections = response.data.split('\n### ');
             const manualStepsSection = sections[1];
             const unitTestsSection = sections[2];
 
@@ -22,7 +23,7 @@ axios
             let manualStepsCount = 0;
             manualStepsLines.map((step) => {
                 const trimmed = step.trim();
-                if (trimmed !== '' && trimmed !== 'Manual Steps') {
+                if (trimmed !== '' && trimmed !== 'Manual Steps' && !trimmed.includes('##')) {
                     manualStepsCount++;
                 }
             });
