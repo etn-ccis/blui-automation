@@ -9,7 +9,9 @@ const calcAutomationPercentage = (unitTests, manualTests) => ((unitTests / (unit
 const requests = [
     axios.get('https://raw.githubusercontent.com/brightlayer-ui/angular-workflows/dev/login-workflow/VALIDATION.md'),
     axios.get('https://raw.githubusercontent.com/brightlayer-ui/react-workflows/dev/login-workflow/VALIDATION.md'),
-    axios.get('https://raw.githubusercontent.com/brightlayer-ui/react-native-workflows/dev/login-workflow/VALIDATION.md'),
+    axios.get(
+        'https://raw.githubusercontent.com/brightlayer-ui/react-native-workflows/dev/login-workflow/VALIDATION.md'
+    ),
     axios.get('https://raw.githubusercontent.com/brightlayer-ui/angular-component-library/dev/VALIDATION.md'),
     axios.get('https://raw.githubusercontent.com/brightlayer-ui/react-component-library/dev/VALIDATION.md'),
     axios.get('https://raw.githubusercontent.com/brightlayer-ui/brightlayer-ui-cli/dev/VALIDATION.md'),
