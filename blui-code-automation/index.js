@@ -6,12 +6,19 @@ let platformManualTestCount = 0;
 
 const calcAutomationPercentage = (unitTests, manualTests) => ((unitTests / (unitTests + manualTests)) * 100).toFixed(2);
 
+const requests = [
+    axios.get('https://raw.githubusercontent.com/brightlayer-ui/angular-workflows/dev/login-workflow/VALIDATION.md'),
+    axios.get('https://raw.githubusercontent.com/brightlayer-ui/react-workflows/dev/login-workflow/VALIDATION.md'),
+    axios.get(
+        'https://raw.githubusercontent.com/brightlayer-ui/react-native-workflows/dev/login-workflow/VALIDATION.md'
+    ),
+    axios.get('https://raw.githubusercontent.com/brightlayer-ui/angular-component-library/dev/VALIDATION.md'),
+    axios.get('https://raw.githubusercontent.com/brightlayer-ui/react-component-library/dev/VALIDATION.md'),
+    axios.get('https://raw.githubusercontent.com/brightlayer-ui/brightlayer-ui-cli/dev/VALIDATION.md'),
+    axios.get('https://raw.githubusercontent.com/brightlayer-ui/icons/dev/VALIDATION.md'),
+];
 axios
-    .all([
-        axios.get(
-            'https://raw.githubusercontent.com/brightlayer-ui/angular-workflows/dev/login-workflow/VALIDATION.md'
-        ),
-    ])
+    .all(requests)
     .then((data) => {
         data.map((response) => {
             const sections = response.data.split('\n### ');
