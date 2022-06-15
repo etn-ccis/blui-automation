@@ -14,6 +14,7 @@ const requests = [
     ),
     axios.get('https://raw.githubusercontent.com/brightlayer-ui/angular-component-library/dev/VALIDATION.md'),
     axios.get('https://raw.githubusercontent.com/brightlayer-ui/react-component-library/dev/VALIDATION.md'),
+    axios.get('https://raw.githubusercontent.com/brightlayer-ui/react-native-component-library/dev/VALIDATION.md'),
     axios.get('https://raw.githubusercontent.com/brightlayer-ui/brightlayer-ui-cli/dev/VALIDATION.md'),
     axios.get('https://raw.githubusercontent.com/brightlayer-ui/icons/dev/VALIDATION.md'),
 ];
