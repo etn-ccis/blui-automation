@@ -55,28 +55,6 @@ jobs:
           command: |
             cd blui-tag && yarn publish:package -b $CIRCLE_BRANCH
 
-  tag_blui_publish:
-    docker:
-      - image: circleci/node:12.16.3-browsers
-    steps:
-      - checkout
-      - gh/setup
-      - run:
-          name: Tag @brightlayer-ui/publish
-          command: |
-            cd blui-publish && yarn tag:package -b $CIRCLE_BRANCH -s -blui-publish
-
-  tag_blui_tag:
-    docker:
-      - image: circleci/node:12.16.3-browsers
-    steps:
-      - checkout
-      - gh/setup
-      - run:
-          name: Tag @brightlayer-ui/tag
-          command: |
-            cd blui-tag && yarn tag:package -b $CIRCLE_BRANCH -s -blui-tag
-
 workflows:
   version: 2
   blui_automation:
@@ -98,9 +76,3 @@ workflows:
               only:
                 - master
                 - dev
-      - tag_blui_publish:
-          requires:
-            - publish_blui_publish
-      - tag_blui_tag:
-          requires:
-            - publish_blui_tag
