@@ -5,11 +5,11 @@
     "author": "Brightlayer UI <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
     "license": "BSD-3-Clause",
     "repository": {
-        "url": "https://github.com/brightlayer-ui/automation",
+        "url": "https://github.com/etn-ccis/blui-automation",
         "type": "git"
     },
     "bugs": {
-        "url": "https://github.com/brightlayer-ui/automation/issues"
+        "url": "https://github.com/etn-ccis/blui-automation/issues"
     },
     "keywords": [
         "brightlayer-ui",
