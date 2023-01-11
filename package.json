@@ -10,14 +10,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/brightlayer-ui/automation.git"
+        "url": "git+https://github.com/etn-ccis/blui-automation.git"
     },
     "author": "Brightlayer UI <brightlayer-ui@eaton.com> (https://github.com/brightlayer-ui)",
     "license": "BSD-3-Clause",
     "bugs": {
-        "url": "https://github.com/brightlayer-ui/automation/issues"
+        "url": "https://github.com/etn-ccis/blui-automation/issues"
     },
-    "homepage": "https://github.com/brightlayer-ui/automation#readme",
+    "homepage": "https://github.com/etn-ccis/blui-automation#readme",
     "prettier": "@brightlayer-ui/prettier-config",
     "devDependencies": {
         "@brightlayer-ui/prettier-config": "^1.0.3",

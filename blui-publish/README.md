@@ -21,8 +21,8 @@ npx -p @brightlayer-ui/publish blui-publish -b <branch-name>
 
 The following table list out some options for the `blui-publish` command. All these options can be configured:
 
-| Option | Description                           |
-| ------ | ------------------------------------- |
-| `-b`   | (default: dev) The branch you are on. |
+| Option | Description            | Default |
+| ------ | ---------------------- | ------- |
+| `-b`   | The branch you are on. | dev     |
 
-> The branch flag is used to determine whether a latest package can be published. Latest packages may only be published for the master branch (-b master).
+> The branch flag is used to determine whether a latest package can be published. Latest packages may only be published for the master branch (`-b master`).

@@ -25,9 +25,9 @@ npx -p @brightlayer-ui/tag blui-tag -b <branch-name> -s <tag-suffix>
 
 The following table list out some options for the `blui-tag` command. All these options can be configured:
 
-| Option | Description                           |
-| ------ | ------------------------------------- |
-| `-b`   | (default: dev) The branch you are on. |
-| `-s`   | (default: '') The tag suffix.         |
+| Option | Description            | Default |
+| ------ | ---------------------- | ------- |
+| `-b`   | The branch you are on. | dev     |
+| `-s`   | The tag suffix.        | `''`    |
 
-> The branch flag is used to determine whether a package should be tagged. Tags may only be created for the master branch (-b master).
+> The branch flag is used to determine whether a package should be tagged. Tags may only be created for the master branch (`-b master`).
