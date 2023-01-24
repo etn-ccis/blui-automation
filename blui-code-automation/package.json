@@ -23,6 +23,6 @@
         "start": "node index.js"
     },
     "dependencies": {
-        "axios": "^0.27.2"
+        "axios": "^1.2.4"
     }
 }
