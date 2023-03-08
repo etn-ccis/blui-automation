@@ -9,6 +9,7 @@ updates:
     target-branch: "dev"
     labels:
       - "external-dependency"
+      - 'brightlayer-ui'
 
   - package-ecosystem: "npm"
     directory: "/blui-code-automation"
@@ -19,6 +20,7 @@ updates:
     target-branch: "dev"
     labels:
       - "external-dependency"
+      - 'brightlayer-ui'
 
   - package-ecosystem: "npm"
     directory: "/blui-publish"
@@ -28,7 +30,8 @@ updates:
     open-pull-requests-limit: 1
     target-branch: "dev"
     labels:
-      - "external-dependency" 
+      - "external-dependency"
+      - 'brightlayer-ui'
 
   - package-ecosystem: "npm"
     directory: "/blui-tag"
@@ -38,4 +41,6 @@ updates:
     open-pull-requests-limit: 1
     target-branch: "dev"
     labels:
-      - "external-dependency"     
+      - "external-dependency"
+      - 'brightlayer-ui'
+      
