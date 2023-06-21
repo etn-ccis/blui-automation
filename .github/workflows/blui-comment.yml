@@ -2,7 +2,10 @@ name: blui-comment
 run-name: Comment
 on:
   pull_request_target:
-    types: types: [opened, edited, synchronize]
+    types:
+      - opened
+      - edited
+      - synchronize
   workflow_call:
 
 permissions:
