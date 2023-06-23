@@ -1,5 +1,13 @@
 name: blui-labels
 run-name: Labels
+on:
+  pull_request_target:
+    types:
+      - opened
+      - edited
+      - synchronize
+    branches:
+      - '*/*'
   workflow_call:
 
 permissions:
