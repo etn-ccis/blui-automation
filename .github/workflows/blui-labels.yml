@@ -29,7 +29,7 @@ jobs:
               labels: ['master']
             })
 
-  label-dev:
+  label-brightlayer-ui:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v6
