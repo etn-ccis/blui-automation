@@ -5,7 +5,7 @@ jobs:
   build:
     working_directory: ~/automation
     docker:
-      - image: circleci/node:12.16.3-browsers
+      - image: cimg/node:18.17.0-browsers
     steps:
       - checkout
       - restore_cache:
@@ -27,7 +27,7 @@ jobs:
 
   publish_blui_publish:
     docker:
-      - image: circleci/node:12.16.3-browsers
+      - image: cimg/node:18.17.0-browsers
     steps:
       - checkout
       - run:
@@ -42,7 +42,7 @@ jobs:
 
   publish_blui_tag:
     docker:
-      - image: circleci/node:12.16.3-browsers
+      - image: cimg/node:18.17.0-browsers
     steps:
       - checkout
       - run:
