@@ -21,6 +21,6 @@
     "prettier": "@brightlayer-ui/prettier-config",
     "devDependencies": {
         "@brightlayer-ui/prettier-config": "^1.0.3",
-        "prettier": "^2.8.8"
+        "prettier": "^3.1.0"
     }
 }
