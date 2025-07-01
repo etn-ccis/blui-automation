@@ -13,6 +13,7 @@ permissions:
 
 jobs:
   comment:
+    name: Add Master Branch Warning Comment
     runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.base.ref == 'master' }}
     steps:
