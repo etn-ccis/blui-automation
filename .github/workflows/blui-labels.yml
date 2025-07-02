@@ -15,6 +15,7 @@ permissions:
 
 jobs:
   label-master:
+    name: Add Master Label To PR
     runs-on: ubuntu-latest
     if: ${{ github.event.pull_request.base.ref == 'master' }}
     steps:
@@ -30,6 +31,7 @@ jobs:
             })
 
   label-brightlayer-ui:
+    name: Add Brightlayer UI Label To PR
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v6
