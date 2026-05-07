@@ -8,17 +8,12 @@
 BRANCH=dev # default
 FIRST_TIME=false # is this the first time publishing the package?
 
-# TEMPORARY RELEASE BRANCH RULES (ROLLBACK AFTER CURRENT RELEASE WINDOW):
-# - Publish alpha/beta only from: dev or main
-# - Publish stable (latest) only from: master or release-react-color
-# Rollback hint: restore prerelease check to no branch restriction and latest check to master only.
-
 # Load the package name and current version from ./package.json
 PACKAGE=`node -p "require('./package.json').name"`
 CURRENT_VERSION=`node -p "require('./package.json').version"`
 
 # Parse the command line arguments and assign to variables
-# -b: branch (default: dev)
+# -b: branch (default: master)
 while getopts b: flag
 do
     case "${flag}" in
@@ -36,13 +31,6 @@ fi;
 # Check if this is an alpha, beta, or latest package and run the appropriate publishing command
 if grep -q "alpha" <<< "$CURRENT_VERSION";
 then
-    # Temporary guard: only allow alpha from dev/main.
-    if ! [[ "$BRANCH" == "dev" || "$BRANCH" == "main" ]];
-    then
-        echo "This branch is not allowed for alpha publishing - skipping publishing."
-        exit 0;
-    fi
-
     if ! [ "$CURRENT_VERSION" == "$NPM_ALPHA_VERSION" ];
     then
         echo "Publishing new alpha";
@@ -55,13 +43,6 @@ then
     fi
 elif grep -q "beta" <<< "$CURRENT_VERSION";
 then
-    # Temporary guard: only allow beta from dev/main.
-    if ! [[ "$BRANCH" == "dev" || "$BRANCH" == "main" ]];
-    then
-        echo "This branch is not allowed for beta publishing - skipping publishing."
-        exit 0;
-    fi
-
     if ! [ "$CURRENT_VERSION" == "$NPM_BETA_VERSION" ];
     then
         echo "Publishing new beta";
@@ -73,10 +54,10 @@ then
         echo "Beta version is already published."
     fi
 else
-    # Temporary guard: allow stable publishing from master or release-react-color only.
-    if ! [[ "$BRANCH" == "master" || "$BRANCH" == "release-react-color" ]];
+    # If this is not the master branch, do not do any 'latest' publications
+    if ! [ "$BRANCH" == "master" ];
     then
-        echo "This branch is not allowed for stable publishing - skipping publishing."
+        echo "This is not the master branch - skipping publishing."
         exit 0;
     fi
 
