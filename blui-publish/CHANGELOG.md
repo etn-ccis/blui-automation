@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.1 (May 07, 2026)
+
+### Changed
+
+- Added new branch rules for publish (temporary, will be rolled back to original script once purpose fulfilled).
+
 ## v1.1.0 (October 14, 2021)
 
 ### Changed
