@@ -14,7 +14,7 @@ fi
 #   bug/blui-5678-fix-layout-issue
 #   hotfix/blui-9999
 #   release/blui-2000
-valid_branch_pattern="^(feature|bug|hotfix|release)\/blui-[0-9]+(-[a-z0-9-]+)?$"
+valid_branch_pattern="^(feature|bug|hotfix|release)\/blui-[0-9]+(-[a-z0-9]+)*$"
 
 # Whitelist for protected branches that don't need to follow the pattern
 whitelist="^(dev|master|main)$"
