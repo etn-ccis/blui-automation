@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "prettier": "prettier \"./**/**.{ts,tsx,js,jsx,json,css,scss,html,md}\" --write",
-        "prettier:check": "prettier \"./**/**.{ts,tsx,js,jsx,json,css,scss,html,md}\" --check"
+        "prettier:check": "prettier \"./**/**.{ts,tsx,js,jsx,json,css,scss,html,md}\" --check",
+        "prepare": "husky"
     },
     "repository": {
         "type": "git",
@@ -21,6 +22,7 @@
     "prettier": "@brightlayer-ui/prettier-config",
     "devDependencies": {
         "@brightlayer-ui/prettier-config": "^1.0.3",
+        "husky": "^9.1.7",
         "prettier": "^3.6.2"
     }
 }

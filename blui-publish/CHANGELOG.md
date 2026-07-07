@@ -1,6 +1,5 @@
 # Changelog
 
-
 ## v1.1.0 (October 14, 2021)
 
 ### Changed
