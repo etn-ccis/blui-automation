@@ -33,14 +33,14 @@ then
     echo "This is an alpha or beta version - skipping tag."
     exit 0;
 else
-    # If this is not the master branch, do not do any tagging
-    if ! [ $BRANCH == "master" ];
+    # Only allow tagging from master or main.
+    if ! [[ "$BRANCH" == "master" || "$BRANCH" == "main" ]];
     then
-        echo "This is not the master branch - skipping tag."
+        echo "This is not the master or main branch - skipping tag."
         exit 0;
     fi
 
-    # If this is the master branch (or running locally without a -b flag), allow tagging
+    # Allow tagging on the selected master or main branch.
     echo "Tagging new latest";
 
     # Create tag-specific CHANGELOG, catch error.
@@ -62,5 +62,5 @@ else
 
 
     # Use Github CLI to make a new release
-    gh release create "v$CURRENT_VERSION$TAG_SUFFIX" -F TAG_CHANGELOG.md -t "$PACKAGE v$CURRENT_VERSION" --target master
+    gh release create "v$CURRENT_VERSION$TAG_SUFFIX" -F TAG_CHANGELOG.md -t "$PACKAGE v$CURRENT_VERSION" --target "$BRANCH"
 fi
