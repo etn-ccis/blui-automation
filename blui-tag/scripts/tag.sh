@@ -33,14 +33,14 @@ then
     echo "This is an alpha or beta version - skipping tag."
     exit 0;
 else
-    # Only allow tagging from master or main.
-    if ! [[ "$BRANCH" == "master" || "$BRANCH" == "main" ]];
+    # Only allow tagging from master or release-react-color.
+    if ! [[ "$BRANCH" == "master" || "$BRANCH" == "release-react-color" ]];
     then
-        echo "This is not the master or main branch - skipping tag."
+        echo "This is not the master or release-react-color branch - skipping tag."
         exit 0;
     fi
 
-    # Allow tagging on the selected master or main branch.
+    # Allow tagging on the selected master or release-react-color branch.
     echo "Tagging new latest";
 
     # Create tag-specific CHANGELOG, catch error.
