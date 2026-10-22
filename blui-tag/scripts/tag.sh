@@ -33,14 +33,14 @@ then
     echo "This is an alpha or beta version - skipping tag."
     exit 0;
 else
-    # Only allow tagging from master or release-react-color.
-    if ! [[ "$BRANCH" == "master" || "$BRANCH" == "release-react-color" ]];
+    # If this is not the master branch, do not do any tagging
+    if ! [ $BRANCH == "master" ];
     then
-        echo "This is not the master or release-react-color branch - skipping tag."
+        echo "This is not the master branch - skipping tag."
         exit 0;
     fi
 
-    # Allow tagging on the selected master or release-react-color branch.
+    # If this is the master branch (or running locally without a -b flag), allow tagging
     echo "Tagging new latest";
 
     # Create tag-specific CHANGELOG, catch error.
@@ -62,5 +62,5 @@ else
 
 
     # Use Github CLI to make a new release
-    gh release create "v$CURRENT_VERSION$TAG_SUFFIX" -F TAG_CHANGELOG.md -t "$PACKAGE v$CURRENT_VERSION" --target "$BRANCH"
+    gh release create "v$CURRENT_VERSION$TAG_SUFFIX" -F TAG_CHANGELOG.md -t "$PACKAGE v$CURRENT_VERSION" --target master
 fi
